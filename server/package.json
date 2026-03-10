@@ -7,7 +7,8 @@
     "start": "tsx index.ts",
     "dev": "tsx watch index.ts",
     "build": "tsc",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
   },
@@ -21,6 +22,7 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/node": "^20.10.0",

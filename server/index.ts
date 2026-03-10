@@ -36,8 +36,11 @@ app.use((_req: Request, res: Response) => {
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-  console.log(`Dog API endpoint: http://localhost:${PORT}/api/dogs/random`);
-});
+export default app;
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Dog API endpoint: http://localhost:${PORT}/api/dogs/random`);
+  });
+}
